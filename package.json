@@ -1,0 +1,22 @@
+{
+  "name": "-advanced-css-sass",
+  "version": "1.0.0",
+  "description": "This repo contains starter files and the finished project files for all the projects contained in the course.",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass":"node-sass sass/style.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maggnity/-advanced-css-sass.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maggnity/-advanced-css-sass/issues"
+  },
+  "homepage": "https://github.com/Maggnity/-advanced-css-sass#readme",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

@@ -1,0 +1,200 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+
+$color-primary:  #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark:#28b485;
+
+$color-white: #fff;
+$color-dark: #777;
+
+
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.7;
+    color: $color-dark;
+
+    box-sizing: border-box;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)) ,
+        url("../img/hero.jpg");
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    position: relative;
+}
+
+.header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.logo {
+    height: 2rem;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+}
+
+.heading-primary--main {
+    display: block;
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: 0.35rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    
+    
+    /* animation-iteration-count: 3; */
+   /*  animation-delay: 3s; */
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    animation: moveInRight 1s ease-out;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(1rem);
+    }
+    80%{
+        transform: translateX(3rem);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(30);
+    }
+}
+
+@keyframes moveInRight {
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80%{
+        transform: translateX(-5rem);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(8rem);
+    }
+   
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}       
+
+
+.btn:link,
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem 5rem;
+    display: inline-block;
+    border-radius: 5rem;
+    transition: all 0.2s;
+    position: relative;
+    margin-top: 2rem;
+    box-shadow: 0 2rem 4rem rgb(0, 0, 0, .8);
+
+}
+.btn:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 2rem 4rem rgb(0, 0, 0, .8);
+}
+.btn:active{
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
+
+}
+
+.btn--white {
+    background-color: $color-white;
+    color: $color-dark;
+}
+
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 5rem;
+    position: absolute;
+        top: 0;
+        left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn--white::after{
+    background-color: $color-white;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.5) scaleY(1.5);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom 3s ease-out .75;
+    animation-fill-mode: backwards;
+}
